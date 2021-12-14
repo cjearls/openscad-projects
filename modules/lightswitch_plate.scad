@@ -1,5 +1,5 @@
 // This is a light switch plate parameterized on how many light switches the plate has.
-numberOfSwitches = 10;
+numberOfSwitches = 3;
 
 // These parameters shouldn't change, but are the measurements in inches of the various lengths on a standard light switch.
 plateToEdgeSwitchInches = 1.375;
@@ -30,11 +30,11 @@ module switchPlate(numberOfSwitches, plateToEdgeSwitch, switchToSwitch, switchHe
         cube([plateToEdgeSwitch*2+(switchToSwitch*(numberOfSwitches-1)), plateHeight, plateDepth]);
         for(index = [0:1:numberOfSwitches-1]){
             // screw hole top
-            translate([plateToEdgeSwitch + (index * switchToSwitch), screwVerticalDistanceFromEdge - screwDiameter/2, 0]){
+            translate([plateToEdgeSwitch + (index * switchToSwitch), screwVerticalDistanceFromEdge, 0]){
                 cylinder(r1=screwDiameter/2, r2=screwDiameter/2, h=plateDepth);
             }
             // screw hole bottom
-            translate([plateToEdgeSwitch + (index * switchToSwitch), plateHeight-screwVerticalDistanceFromEdge - screwDiameter/2, 0]){
+            translate([plateToEdgeSwitch + (index * switchToSwitch), plateHeight-screwVerticalDistanceFromEdge, 0]){
                 cylinder(r1=screwDiameter/2, r2=screwDiameter/2, h=plateDepth);
             }
             // switch hole
