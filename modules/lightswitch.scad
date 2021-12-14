@@ -4,7 +4,16 @@ switchWidth = 7;
 switchDepth = 14;
 
 module switch(switchLength, switchWidth, switchDepth){
-    cube([switchWidth, switchDepth, switchLength]);
+    cylinderRadius = switchDepth;
+
+    union(){
+        cube([switchDepth, switchWidth, switchLength]);
+        translate([-cylinderRadius, 0, switchLength/2]){
+            rotate([270, 0, 0]){
+                cylinder(r1=cylinderRadius, r2=cylinderRadius, h=switchWidth);
+            }
+        }
+    }
 }
 
 switch(switchLength, switchWidth, switchDepth);
