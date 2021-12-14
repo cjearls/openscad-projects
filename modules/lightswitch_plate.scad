@@ -26,20 +26,22 @@ plateDepth = 1;
 module switchPlate(numberOfSwitches, plateToEdgeSwitch, switchToSwitch, switchHeight, switchWidth, verticalScrewDistance, plateHeight, plateDepth, screwDiameter){
     screwVerticalDistanceFromEdge = (plateHeight-verticalScrewDistance)/2;
 
-    difference(){
-        cube([plateToEdgeSwitch*2+(switchToSwitch*(numberOfSwitches-1)), plateHeight, plateDepth]);
-        for(index = [0:1:numberOfSwitches-1]){
-            // screw hole top
-            translate([plateToEdgeSwitch + (index * switchToSwitch), screwVerticalDistanceFromEdge, 0]){
-                cylinder(r1=screwDiameter/2, r2=screwDiameter/2, h=plateDepth);
-            }
-            // screw hole bottom
-            translate([plateToEdgeSwitch + (index * switchToSwitch), plateHeight-screwVerticalDistanceFromEdge, 0]){
-                cylinder(r1=screwDiameter/2, r2=screwDiameter/2, h=plateDepth);
-            }
-            // switch hole
-            translate([plateToEdgeSwitch + (index * switchToSwitch) - switchWidth/2, plateHeight/2 - switchHeight/2, 0]){
-                cube([switchWidth, switchHeight, plateDepth]);
+    rotate([90, 0, 0]){
+        difference(){
+            cube([plateToEdgeSwitch*2+(switchToSwitch*(numberOfSwitches-1)), plateHeight, plateDepth]);
+            for(index = [0:1:numberOfSwitches-1]){
+                // screw hole top
+                translate([plateToEdgeSwitch + (index * switchToSwitch), screwVerticalDistanceFromEdge, 0]){
+                    cylinder(r1=screwDiameter/2, r2=screwDiameter/2, h=plateDepth);
+                }
+                // screw hole bottom
+                translate([plateToEdgeSwitch + (index * switchToSwitch), plateHeight-screwVerticalDistanceFromEdge, 0]){
+                    cylinder(r1=screwDiameter/2, r2=screwDiameter/2, h=plateDepth);
+                }
+                // switch hole
+                translate([plateToEdgeSwitch + (index * switchToSwitch) - switchWidth/2, plateHeight/2 - switchHeight/2, 0]){
+                    cube([switchWidth, switchHeight, plateDepth]);
+                }
             }
         }
     }
