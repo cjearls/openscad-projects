@@ -1,9 +1,6 @@
-// These are the rough millimeter measurements of a light switch.
-switchLength = 6.5;
-switchWidth = 7;
-switchDepth = 14;
+include <../parameters/lightswitch_parameters.scad>
 
-module switch(switchLength, switchWidth, switchDepth){
+module switch(switchLength=switchLength, switchWidth=switchWidth, switchDepth=switchDepth){
     cylinderRadius = switchDepth;
     translate([cylinderRadius, -switchWidth/2, -switchLength/2]){
         union(){
