@@ -1,5 +1,5 @@
 // This is a light switch plate parameterized on how many light switches the plate has.
-numberOfSwitches = 3;
+numberOfSwitches = 2;
 
 // These parameters shouldn't change, but are the measurements in inches of the various lengths on a standard light switch.
 plateToEdgeSwitchInches = 1.375;
@@ -25,5 +25,4 @@ plateDepth = 1;
 
 // These are the rough millimeter measurements of a light switch.
 switchLength = 6.5;
-switchWidth = 7;
 switchDepth = 14;
