@@ -17,7 +17,6 @@ module switchFullModel(switchRotations = [for (i = [0:numberOfSwitches-1]) 0]){
 }
 
 // This helps to make a smooth animation for the switch full model.
-
 switchPosition = 0;
 if ($t < 0.5){
     switchPosition = 1-$t*4;
