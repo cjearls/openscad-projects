@@ -26,3 +26,6 @@ plateDepth = 1;
 // These are the rough millimeter measurements of a light switch.
 switchLength = 6.5;
 switchDepth = 14;
+
+
+switchRotationMultiplier = 45; // This is a multiplier used to get the actual angle of the switches in the switch assembly. It is multiplied by the -1 to 1 angle parameter of the light switch module.
