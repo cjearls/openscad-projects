@@ -1,20 +1,54 @@
 include <../parameters/9g_servo_parameters.scad>
 
-9g_motor();
+module 9g_servo(){
+	union(){
+		cube(servo_body_dimensions);
+		// Mounting overhang
+		translate([-overhang_extension,0,overhang_height]){
+			difference(){
+				cube(overhang_dimensions);
+				
+				// First mounting hole
+				translate([overhang_hole_offset, overhang_dimensions[1]/2, 0]){
+					cylinder(h=overhang_dimensions[2], r=overhang_hole_radius);
+				}
+				translate([0, overhang_dimensions[1]/2 - overhang_hole_cut_width/2, 0]){
+					cube([overhang_hole_offset, overhang_hole_cut_width, overhang_dimensions[2]]);
+				}
 
-module 9g_motor(){
-	difference(){			
-		union(){
-			cube(servo_body_dimensions, center=true);
-			translate([0, 0, mounting_wing_vertical_offset]) cube(mounting_wing_dimensions, center=true);
-			translate([5.5,0,2.75]) cylinder(r=6, h=25.75, $fn=20, center=true);
-			translate([-.5,0,2.75]) cylinder(r=1, h=25.75, $fn=20, center=true);
-			translate([-1,0,2.75]) cube([5,5.6,24.5], center=true);		
-			translate([5.5,0,3.65]) cylinder(r=2.35, h=29.25, $fn=20, center=true);				
+				// Second mounting hole
+				translate([overhang_dimensions[0] - overhang_hole_offset, overhang_dimensions[1]/2, 0]){
+					cylinder(h=overhang_dimensions[2], r=overhang_hole_radius);
+				}
+				translate([overhang_dimensions[0] - overhang_hole_offset, overhang_dimensions[1]/2 - overhang_hole_cut_width/2, 0]){
+					cube([overhang_hole_offset, overhang_hole_cut_width, overhang_dimensions[2]]);
+				}
+			}
 		}
-		translate([10,0,-11]) rotate([0,-30,0]) cube([8,13,4], center=true);
-		for ( hole = [mounting_hole_separation/2, -mounting_hole_separation/2] ){
-			translate([hole,0,5]) cylinder(r=2.2, h=4, $fn=20, center=true);
-		}	
+
+		// Gearbox
+		union(){
+			// Major gearbox
+			translate([gearbox_major_radius, gearbox_major_radius, 0]){
+				cylinder(h=servo_body_dimensions[2]+gearbox_height, r=gearbox_major_radius);
+			}
+
+			// Minor gearbox
+			translate([gearbox_major_radius*2, gearbox_major_radius, 0]){
+				cylinder(h=servo_body_dimensions[2]+gearbox_height, r=gearbox_minor_radius);
+			}
+
+			// Gear
+			translate([gearbox_major_radius, gearbox_major_radius, 0]){
+				cylinder(h=servo_body_dimensions[2]+gearbox_height+gear_height, r=gear_radius);
+			}
+		}
+
+		// Wire
+		// translate([-wire_dimensions[0], servo_body_dimensions[1]/2-wire_dimensions[1], wire_height_offset]){
+		// 	cube(wire_dimensions);
+		// }
 	}
 }
+
+9g_servo();
