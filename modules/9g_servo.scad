@@ -1,10 +1,12 @@
 include <../parameters/9g_servo_parameters.scad>
 
+9g_servo();
+
 module 9g_servo(){
 	union(){
 		cube(servo_body_dimensions);
 		// Mounting overhang
-		translate([-overhang_extension,0,overhang_height]){
+		translate([-overhang_extension, 0, overhang_height]){
 			difference(){
 				cube(overhang_dimensions);
 				
@@ -45,10 +47,8 @@ module 9g_servo(){
 		}
 
 		// Wire
-		// translate([-wire_dimensions[0], servo_body_dimensions[1]/2-wire_dimensions[1], wire_height_offset]){
-		// 	cube(wire_dimensions);
-		// }
+		translate([-wire_dimensions[0], servo_body_dimensions[1]/2-wire_dimensions[1], wire_height_offset]){
+			cube(wire_dimensions);
+		}
 	}
 }
-
-9g_servo();
