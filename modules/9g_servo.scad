@@ -3,7 +3,7 @@ include <../parameters/9g_servo_parameters.scad>
 $fn=100;
 9g_servo();
 
-module 9g_servo(){
+module 9g_servo(servo_body_dimensions = servo_body_dimensions, overhang_height = overhang_height, overhang_extension = overhang_extension, overhang_dimensions = overhang_dimensions, overhang_hole_radius = overhang_hole_radius, overhang_hole_offset = overhang_hole_offset, overhang_hole_cut_width = overhang_hole_cut_width, gearbox_height = gearbox_height, gearbox_major_radius = gearbox_major_radius, gearbox_minor_radius = gearbox_minor_radius, gear_radius = gear_radius, gear_height = gear_height, wire_height_offset = wire_height_offset, wire_dimensions = wire_dimensions){
 	union(){
 		cube(servo_body_dimensions);
 		// Mounting overhang
