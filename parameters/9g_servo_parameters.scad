@@ -12,4 +12,4 @@ gear_radius = 4.84/2;
 gear_height = 3;
 
 wire_height_offset = 4.5;
-wire_dimensions = [overhang_extension*1.5, 3.5, 1.2]
+wire_dimensions = [overhang_extension*1.5, 3.5, 1.2];
