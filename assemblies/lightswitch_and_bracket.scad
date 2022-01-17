@@ -6,6 +6,8 @@ use <../assemblies/lightswitch_assembly.scad>
 include <../parameters/lightswitch_parameters.scad>
 include <../parameters/9g_servo_parameters.scad>
 
+$fn=200;
+
 // This helps to make a smooth animation for the switch full model.
 render(){
   switchPosition = 0;
