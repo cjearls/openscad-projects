@@ -1,16 +1,28 @@
 // The "use" keyword means only functions and modules are taken.
 use <../modules/lightswitch.scad>
 use <../modules/lightswitch_plate.scad>
+use <../modules/lightswitch_screw.scad>
 // The "include" keyword means all variables are taken as though the code was inserted in this file.
 include <../parameters/lightswitch_parameters.scad>
 
 // The list of switchRotations is a list of numbers from -1 to 1 that controls the rotation of each switch in the switch model
-module switchFullModel(switchRotations = [for (i = [0:numberOfSwitches-1]) 0]){
+module switchFullModel(switchRotations = [for (i = [0:numberOfSwitches-1]) 0], screwOffset = 0){
     switchPlate();
     for(index=[0:1:numberOfSwitches-1]){
         translate([plateToEdgeSwitch + (index*switchToSwitch), -switchDepth, plateHeight/2]){
             rotate([0, switchRotations[index]*switchRotationMultiplier, 90]){
                     switch();
+            }
+        }
+
+        translate([plateToEdgeSwitch + (index*switchToSwitch), screwHeadHeight + screwOffset, screwVerticalDistanceFromEdge]){
+            rotate([90, 0, 0]){
+                lightswitch_screw();
+            }
+        }
+        translate([plateToEdgeSwitch + (index*switchToSwitch), screwHeadHeight + screwOffset, plateHeight-screwVerticalDistanceFromEdge]){
+            rotate([90, 0, 0]){
+                lightswitch_screw();
             }
         }
     }

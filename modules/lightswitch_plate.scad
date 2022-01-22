@@ -1,7 +1,6 @@
 include <../parameters/lightswitch_parameters.scad>
 
-module switchPlate(numberOfSwitches=numberOfSwitches, plateToEdgeSwitch=plateToEdgeSwitch, switchToSwitch=switchToSwitch, switchHeight=switchHeight, switchWidth=switchWidth, verticalScrewDistance=verticalScrewDistance, plateHeight=plateHeight, plateDepth=plateDepth, screwDiameter=screwDiameter){
-    screwVerticalDistanceFromEdge = (plateHeight-verticalScrewDistance)/2;
+module switchPlate(numberOfSwitches=numberOfSwitches, plateToEdgeSwitch=plateToEdgeSwitch, switchToSwitch=switchToSwitch, switchHeight=switchHeight, switchWidth=switchWidth, verticalScrewDistance=verticalScrewDistance, plateHeight=plateHeight, plateDepth=plateDepth, screwDiameter=screwDiameter, screwVerticalDistanceFromEdge=screwVerticalDistanceFromEdge){
 
     rotate([90, 0, 0]){
         difference(){

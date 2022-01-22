@@ -1,5 +1,5 @@
 // This is a light switch plate parameterized on how many light switches the plate has.
-numberOfSwitches = 1;
+numberOfSwitches = 2;
 
 // These parameters shouldn't change, but are the measurements in inches of the various lengths on a standard light switch.
 plateToEdgeSwitchInches = 1.375;
@@ -27,5 +27,12 @@ plateDepth = 1;
 switchLength = 6.5;
 switchDepth = 14;
 
+// These are the rough dimensions of a light switch screw.
+screwLength = 13.85;
+screwHeadRadius = 6.9/2;
+screwHeadHeight = 2.3;
+screwBodyRadius = 3.42/2;
 
 switchRotationMultiplier = 30; // This is a multiplier used to get the actual angle of the switches in the switch assembly. It is multiplied by the -1 to 1 angle parameter of the light switch module.
+
+screwVerticalDistanceFromEdge = (plateHeight-verticalScrewDistance)/2;
