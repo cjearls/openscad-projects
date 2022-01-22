@@ -2,7 +2,7 @@
 numberOfSwitches = 3;
 
 // These parameters shouldn't change, but are the measurements in inches of the various lengths on a standard light switch.
-plateToEdgeSwitchInches = 1.375;
+plateToEdgeSwitchInches = 1.375; // This refers to the horizontal distance between the edge of the switch plate and the center of the switch closest to the edge.
 switchToSwitchInches = 1.875;
 switchHeightInches = 1;
 switchWidthInches = 3/8;

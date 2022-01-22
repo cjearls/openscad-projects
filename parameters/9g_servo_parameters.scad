@@ -13,3 +13,5 @@ gear_height = 3;
 
 wire_height_offset = 4.5;
 wire_dimensions = [overhang_extension*1.5, 3.5, 1.2];
+
+total_servo_height = gear_height + gearbox_height + servo_body_dimensions[2];
