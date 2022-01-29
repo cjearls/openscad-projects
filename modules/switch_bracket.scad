@@ -31,8 +31,9 @@ module switchBracket(numberOfSwitches=numberOfSwitches, plateToEdgeSwitch=plateT
         rotate([0, 90, 0]){
             difference(){
                 cube([overhang_dimensions[0], overhang_dimensions[1], bracket_thickness]);
-                translate([overhang_extension, 0, 0])
-                cube(servo_body_dimensions);
+                translate([overhang_extension, 0, 0]){
+                    cube(servo_body_dimensions);
+                }
             }
         }
     }
