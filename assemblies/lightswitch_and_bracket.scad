@@ -20,7 +20,7 @@ render(){
       9g_servo();
       translate([gearbox_major_radius - hole_centers_offset_from_edge, gearbox_major_radius - hole_centers_offset_from_edge, total_servo_height - screw_gear_hole_depth]){
         translate([hole_centers_offset_from_edge, hole_centers_offset_from_edge, 0])
-        rotate([0, 0, -150])
+        rotate([0, 0, -120])
         translate([-hole_centers_offset_from_edge, -hole_centers_offset_from_edge, 0])
         servo_flipping_attachment();
       }
