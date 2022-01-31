@@ -7,7 +7,7 @@ servo_gear_vertical_offset_from_switch_center = 0;
 servo_horizontal_offset_from_switch = -(switchWidth + gear_height)/2 + 2;
 servo_offset_from_switch_plate = 30 + bracket_thickness;
 
-bracket_tolerance_offset = 1.5;
+bracket_tolerance_offset = .75;
 
 bracket_height = verticalScrewDistance + 2*bracket_edge_distance;
 bracket_width = switchWidth + 2*bracket_edge_distance;

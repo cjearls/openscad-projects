@@ -1,10 +1,10 @@
 include <../parameters/9g_servo_parameters.scad>
 
 screw_shaft_hole_radius = 2.45/2;
-screw_head_hole_radius = 4.75/2;
+screw_head_hole_radius = 5.3/2;
 screw_head_hole_depth = 0.9;
-screw_gear_hole_depth = 1.9;
-gear_radius_offset = .15;
+screw_gear_hole_depth = gear_height - .3;
+gear_radius_offset = .3;
 
 attachment_thickness = 5;
 attachment_length = 40;
