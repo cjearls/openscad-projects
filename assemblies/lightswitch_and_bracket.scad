@@ -18,11 +18,11 @@ render(){
   translate([-servo_horizontal_offset_from_switch + plateToEdgeSwitch - switchWidth/2 - total_servo_height, servo_offset_from_switch_plate, servo_gear_vertical_offset_from_switch_center + (plateHeight/2 + gearbox_major_radius)]){
     rotate([-90, 90, -90]){
       9g_servo();
-      translate([gearbox_major_radius - hole_centers_offset_from_edge, gearbox_major_radius - hole_centers_offset_from_edge, total_servo_height - screw_gear_hole_depth]){
+      translate([gearbox_major_radius - hole_centers_offset_from_edge, gearbox_major_radius - hole_centers_offset_from_edge, total_servo_height + attachment_thickness - screw_gear_hole_depth]){
         translate([hole_centers_offset_from_edge, hole_centers_offset_from_edge, 0])
         rotate([0, 0, -120])
         translate([-hole_centers_offset_from_edge, -hole_centers_offset_from_edge, 0])
-        servo_flipping_attachment();
+        mirror([0, 0, 1]) servo_flipping_attachment();
       }
     }
   }
