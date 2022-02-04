@@ -11,4 +11,4 @@ translate([0, 0, -desk_depth]) cube([desk_width, 50, desk_depth]);
 
 desk_clamp();
 translate([desk_clamp_hole_distance_from_edge, desk_clamp_width/2, -desk_clamp_total_gap_height - screw_head_height - desk_depth]) mirror([0, 0, 1]) desk_clamp_screw();
-translate([20, 0, 0]) desk_clamp_threaded_slot();
+translate([desk_clamp_below_length + desk_clamp_threaded_slot_tolerance_offset, desk_clamp_width, -desk_clamp_total_gap_height + desk_clamp_thickness]) rotate([0, 0, 180]) desk_clamp_threaded_slot();

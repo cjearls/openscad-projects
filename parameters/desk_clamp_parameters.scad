@@ -19,4 +19,7 @@ screw_shaft_length = desk_clamp_total_gap_height;
 
 desk_clamp_threaded_slot_tolerance_offset = 0.5;
 desk_clamp_threaded_slot_thickness = desk_clamp_thickness;
-desk_clamp_threaded_slot_distance_from_edge = desk_clamp_hole_distance_from_edge;
+desk_clamp_threaded_slot_hole_distance_from_edge = desk_clamp_hole_distance_from_clamp_end + desk_clamp_threaded_slot_tolerance_offset;
+desk_clamp_threaded_slot_length = desk_clamp_threaded_slot_hole_distance_from_edge*2;
+desk_clamp_threaded_slot_width = desk_clamp_width;
+desk_clamp_threaded_slot_total_height = desk_clamp_threaded_slot_thickness;
