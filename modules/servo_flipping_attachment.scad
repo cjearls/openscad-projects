@@ -6,11 +6,11 @@ module servo_flipping_attachment(){
   assert(attachment_thickness - screw_head_hole_depth - screw_gear_hole_depth > 0, "the attachment needs to be thick enough to have all the necessary holes in it");
 
   rotate_extrude(angle = attachment_arc_angle){
-    translate([attachment_length-attachment_thickness*1.5, 0, 0]) square(size=attachment_thickness);
+    translate([attachment_length-2*rotated_extrusion_thickness, 0, 0]) square([rotated_extrusion_thickness, attachment_thickness]);
   }
     rotate([0, 0, attachment_angle-attachment_arc_angle])
   rotate_extrude(angle = attachment_arc_angle){
-    translate([attachment_length-attachment_thickness*1.5, 0, 0]) square(size=attachment_thickness);
+    translate([attachment_length-2*rotated_extrusion_thickness, 0, 0]) square([rotated_extrusion_thickness, attachment_thickness]);
   }
 
   difference(){
