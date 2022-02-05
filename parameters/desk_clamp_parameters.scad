@@ -1,5 +1,7 @@
+// These are used in the assembly to show how the physical layout will look.
 desk_depth = 18.2;
 desk_width = 16;
+wall_distance_from_desk_edge = 75;
 
 // The screw standard doesn't make bolts with a hex head, which are easier to screw, so these are the dimensions for my own modified screws
 screw_standard_name = "M8";
