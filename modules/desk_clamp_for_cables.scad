@@ -9,7 +9,7 @@ module desk_clamp_for_cables(){
         desk_clamp();
         cable_holder_exterior_length = cable_holder_interior_length + desk_clamp_thickness;
         cable_holder_exterior_height = cable_holder_interior_height + 2*desk_clamp_thickness;
-        translate([-cable_holder_exterior_length, 0, -cable_holder_exterior_height]){
+        translate([-cable_holder_exterior_length, 0, -cable_holder_exterior_height + desk_clamp_thickness]){
             difference(){
                 cube([cable_holder_exterior_length, desk_clamp_width, cable_holder_exterior_height]);
                 // interior cutout
