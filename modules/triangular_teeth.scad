@@ -1,7 +1,7 @@
 // The goal of this module is to create a hollow cylinder with a number of triangular teeth on the inside.
 function get_circle_coordinates(angle, radius) = [radius * cos(angle), radius * sin(angle)];
 
-module triangular_teeth(outer_diameter, inner_diameter, tooth_length, number_of_teeth, height){
+module triangular_teeth(inner_diameter, tooth_length, number_of_teeth, height){
     linear_extrude(height=height){
         polygon(points = [for (index = [0 : 2*number_of_teeth]) get_circle_coordinates(
             // This splits each point into its angle from 0.
@@ -19,7 +19,7 @@ module triangular_tooth_cylinder(outer_diameter, inner_diameter, tooth_length, n
 
     difference(){
         cylinder(h = height, r = outer_diameter/2);
-        triangular_teeth(outer_diameter = outer_diameter, inner_diameter = inner_diameter, tooth_length = tooth_length, number_of_teeth = number_of_teeth, height = height);
+        triangular_teeth(inner_diameter = inner_diameter, tooth_length = tooth_length, number_of_teeth = number_of_teeth, height = height);
     }
 }
 
