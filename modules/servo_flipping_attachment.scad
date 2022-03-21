@@ -1,7 +1,7 @@
 include <../parameters/servo_flipping_attachment_parameters.scad>
 include <../parameters/9g_servo_parameters.scad>
 
-use <../modules/triangular_teeth.scad>
+use <../libraries/triangular_teeth.scad>
 
 module servo_flipping_attachment(){
   $fn = fn_value;

@@ -1,4 +1,5 @@
 include <../parameters/9g_servo_parameters.scad>
+use <../libraries/triangular_teeth.scad>
 
 $fn=100;
 9g_servo();
@@ -43,7 +44,7 @@ module 9g_servo(servo_body_dimensions = servo_body_dimensions, overhang_height =
 
 			// Gear
 			translate([gearbox_major_radius, gearbox_major_radius, 0]){
-				cylinder(h=servo_body_dimensions[2]+gearbox_height+gear_height, r=gear_radius);
+				triangular_teeth(inner_diameter = 4.912, tooth_length = .2, number_of_teeth = 21, height = gearbox_height+gear_height+servo_body_dimensions[2]);
 			}
 		}
 

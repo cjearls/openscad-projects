@@ -24,4 +24,5 @@ module triangular_tooth_cylinder(outer_diameter, inner_diameter, tooth_length, n
 }
 
 
-triangular_tooth_cylinder(outer_diameter = 6.95, inner_diameter = 4.912, tooth_length = .2, number_of_teeth = 21, height = 5);
+// triangular_tooth_cylinder(outer_diameter = 6.95, inner_diameter = 4.912, tooth_length = .2, number_of_teeth = 21, height = 5);
+translate([7, 0, 0]) triangular_tooth_cylinder(outer_diameter = 7, inner_diameter = 5.89, tooth_length = .3, number_of_teeth = 26, height = 5);
