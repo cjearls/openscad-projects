@@ -21,8 +21,13 @@ module switchBracket(numberOfSwitches=numberOfSwitches, plateToEdgeSwitch=plateT
                     cube([switchWidth, switchHeight, bracket_thickness]);
                 }
             }
+
+            // Connection between light switch and servo brackets
             translate([bracket_width/2 - gear_height/2 - total_gearbox_height - (servo_body_dimensions[2] - overhang_height - overhang_dimensions[2]) - (servo_horizontal_offset_from_switch + (switchWidth + gear_height)/2), servo_gear_vertical_offset_from_switch_center + bracket_height/2 + gearbox_radii[0] - (servo_body_dimensions[0] + overhang_extension), bracket_thickness-servo_offset_from_switch_plate]){
-                cube([bracket_thickness + (servo_horizontal_offset_from_switch + total_gearbox_height), overhang_dimensions[0], servo_offset_from_switch_plate]);
+                union(){
+                    cube([bracket_thickness, overhang_dimensions[0], servo_offset_from_switch_plate]);
+                    translate([0, 0, servo_offset_from_switch_plate - bracket_thickness]) cube([bracket_thickness + servo_horizontal_offset_from_switch, overhang_dimensions[0], bracket_thickness]);
+                }
             }
         }
     }
@@ -32,6 +37,8 @@ module switchBracket(numberOfSwitches=numberOfSwitches, plateToEdgeSwitch=plateT
         rotate([0, 90, 0]){
             difference(){
                 cube([overhang_dimensions[0], overhang_dimensions[1], bracket_thickness]);
+
+                // Servo cutout
                 translate([overhang_extension - bracket_tolerance_offset, 0, 0]){
                     cube([servo_body_dimensions[0] + 2*bracket_tolerance_offset, servo_body_dimensions[1], servo_body_dimensions[2]]);
                 }
