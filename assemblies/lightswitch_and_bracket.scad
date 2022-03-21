@@ -15,7 +15,7 @@ $fn=20;
 // This helps to make a smooth animation for the switch full model.
 render(){
   switchPosition = 0;
-  translate([-servo_horizontal_offset_from_switch + plateToEdgeSwitch - switchWidth/2 - total_servo_height, servo_offset_from_switch_plate, servo_gear_vertical_offset_from_switch_center + (plateHeight/2 + gearbox_radii[0])]){
+  translate([plateToEdgeSwitch - switchWidth/2 - (bracket_width-switchWidth)/2 - switch_bracket_edge_to_servo_bracket - (overhang_height), servo_offset_from_switch_plate, servo_gear_vertical_offset_from_switch_center + (plateHeight/2 + gearbox_radii[0])]){
     rotate([-90, 90, -90]){
       55g_servo();
       if ($t < 0.5){

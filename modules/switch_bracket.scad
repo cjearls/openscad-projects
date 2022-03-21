@@ -23,17 +23,19 @@ module switchBracket(numberOfSwitches=numberOfSwitches, plateToEdgeSwitch=plateT
             }
 
             // Connection between light switch and servo brackets
-            translate([bracket_width/2 - gear_height/2 - total_gearbox_height - (servo_body_dimensions[2] - overhang_height - overhang_dimensions[2]) - (servo_horizontal_offset_from_switch + (switchWidth + gear_height)/2), servo_gear_vertical_offset_from_switch_center + bracket_height/2 + gearbox_radii[0] - (servo_body_dimensions[0] + overhang_extension), bracket_thickness-servo_offset_from_switch_plate]){
+            translate([-switch_bracket_edge_to_servo_bracket - bracket_thickness,
+                servo_gear_vertical_offset_from_switch_center + bracket_height/2 + gearbox_radii[0] - (servo_body_dimensions[0] + overhang_extension),
+                bracket_thickness-servo_offset_from_switch_plate]){
                 union(){
                     cube([bracket_thickness, overhang_dimensions[0], servo_offset_from_switch_plate]);
-                    translate([0, 0, servo_offset_from_switch_plate - bracket_thickness]) cube([bracket_thickness + servo_horizontal_offset_from_switch, overhang_dimensions[0], bracket_thickness]);
+                    translate([0, 0, servo_offset_from_switch_plate - bracket_thickness]) cube([bracket_thickness+switch_bracket_edge_to_servo_bracket, overhang_dimensions[0], bracket_thickness]);
                 }
             }
         }
     }
 
     // Servo bracket
-    translate([bracket_edge_distance - total_gearbox_height - gear_height - (servo_body_dimensions[2] - overhang_dimensions[2] - overhang_height) - servo_horizontal_offset_from_switch, servo_offset_from_switch_plate - bracket_thickness, servo_gear_vertical_offset_from_switch_center + overhang_dimensions[0] + bracket_height/2 + gearbox_radii[0] - (servo_body_dimensions[0] + overhang_extension)]){
+    translate([-switch_bracket_edge_to_servo_bracket - bracket_thickness, servo_offset_from_switch_plate - bracket_thickness, servo_gear_vertical_offset_from_switch_center + overhang_dimensions[0] + bracket_height/2 + gearbox_radii[0] - (servo_body_dimensions[0] + overhang_extension)]){
         rotate([0, 90, 0]){
             difference(){
                 cube([overhang_dimensions[0], overhang_dimensions[1], bracket_thickness]);
