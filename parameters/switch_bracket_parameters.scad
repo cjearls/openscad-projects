@@ -1,5 +1,5 @@
 include <../parameters/lightswitch_parameters.scad>
-include <../parameters/9g_servo_parameters.scad>
+include <../parameters/55g_servo_parameters.scad>
 
 bracket_thickness = 3;
 bracket_edge_distance = 5;

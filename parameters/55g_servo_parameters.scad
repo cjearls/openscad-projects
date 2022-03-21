@@ -11,6 +11,7 @@ overhang_triangle_height = 1.5;
 overhang_triangle_length = overhang_extension;
 gearbox_radii = [servo_body_dimensions[1]/2, 13.08/2, 10.75/2];
 gearbox_heights = [2, 1.2, .5];
+total_gearbox_height = gearbox_heights[0] + gearbox_heights[1] + gearbox_heights[2];
 tag_base_dimensions = [24.75, 17.8, gearbox_heights[0]];
 gear_height = 3.85;
 teeth_outer_diameter = 5.89;
@@ -21,4 +22,4 @@ gear_radius = teeth_outer_diameter/2;
 wire_height_offset = 3.25;
 wire_dimensions = [overhang_extension*1.5, 3.5, 1.2];
 
-total_servo_height = gear_height + gearbox_heights[0] + gearbox_heights[1] + gearbox_heights[2] + servo_body_dimensions[2];
+total_servo_height = gear_height + total_gearbox_height + servo_body_dimensions[2];
