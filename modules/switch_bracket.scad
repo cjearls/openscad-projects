@@ -28,7 +28,7 @@ module switchBracket(numberOfSwitches=numberOfSwitches, plateToEdgeSwitch=plateT
                 bracket_thickness-servo_offset_from_switch_plate]){
                 union(){
                     cube([bracket_thickness, overhang_dimensions[0], servo_offset_from_switch_plate]);
-                    translate([0, 0, servo_offset_from_switch_plate - bracket_thickness]) cube([bracket_thickness+switch_bracket_edge_to_servo_bracket, overhang_dimensions[0], bracket_thickness]);
+                    translate([0, 0, servo_offset_from_switch_plate - bracket_thickness]) cube([bracket_thickness+switch_bracket_edge_to_servo_bracket, bracket_height - (servo_gear_vertical_offset_from_switch_center + bracket_height/2 + gearbox_radii[0] - (servo_body_dimensions[0] + overhang_extension)), bracket_thickness]);
                 }
             }
         }
