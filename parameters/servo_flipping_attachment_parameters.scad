@@ -1,4 +1,4 @@
-include <../parameters/9g_servo_parameters.scad>
+include <../parameters/55g_servo_parameters.scad>
 
 screw_shaft_hole_radius = 2.45/2;
 screw_head_hole_radius = 5.3/2;
@@ -17,6 +17,10 @@ rotated_extrusion_thickness = 3;
 teeth_diameter = 4.912;
 tooth_length = .198;
 number_of_teeth = 21;
+
+teeth_diameter = 5.89;
+tooth_length = .3;
+number_of_teeth = 26;
 // This scales the teeth to factor in imperfections in the printing resolution
 // Testing 1, 1.05, 1.1, and 1.15.
 teeth_scaling_factor = 1.15;

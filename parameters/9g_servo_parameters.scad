@@ -8,8 +8,12 @@ overhang_hole_cut_width = 1.2;
 gearbox_height = 4.5;
 gearbox_major_radius = servo_body_dimensions[1]/2;
 gearbox_minor_radius = 5.7/2;
-gear_radius = 4.84/2;
 gear_height = 3;
+
+teeth_outer_diameter = 4.912;
+tooth_length = .198;
+number_of_teeth = 21;
+gear_radius = teeth_outer_diameter/2;
 
 wire_height_offset = 4.5;
 wire_dimensions = [overhang_extension*1.5, 3.5, 1.2];
