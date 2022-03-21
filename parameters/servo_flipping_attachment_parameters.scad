@@ -13,14 +13,6 @@ attachment_angle = 75;
 attachment_open_angle = 40;
 fn_value = 20;
 rotated_extrusion_thickness = 3;
-// These parameters affect the teeth that mesh with the servo's gear
-teeth_diameter = 4.912;
-tooth_length = .198;
-number_of_teeth = 21;
-
-teeth_diameter = 5.89;
-tooth_length = .3;
-number_of_teeth = 26;
 // This scales the teeth to factor in imperfections in the printing resolution
 // Testing 1, 1.05, 1.1, and 1.15.
 teeth_scaling_factor = 1.15;

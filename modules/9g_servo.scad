@@ -44,7 +44,7 @@ module 9g_servo(servo_body_dimensions = servo_body_dimensions, overhang_height =
 
 			// Gear
 			translate([gearbox_major_radius, gearbox_major_radius, 0]){
-				triangular_teeth(inner_diameter = teeth_outer_diameter, tooth_length = tooth_length, number_of_teeth = number_of_teeth, height = gearbox_height+gear_height+servo_body_dimensions[2]);
+				triangular_teeth(inner_diameter = teeth_outer_diameter - tooth_length*2, tooth_length = tooth_length, number_of_teeth = number_of_teeth, height = gearbox_height+gear_height+servo_body_dimensions[2]);
 			}
 		}
 

@@ -1,5 +1,5 @@
 include <../parameters/servo_flipping_attachment_parameters.scad>
-include <../parameters/9g_servo_parameters.scad>
+include <../parameters/55g_servo_parameters.scad>
 
 use <../libraries/triangular_teeth.scad>
 
@@ -32,7 +32,7 @@ module servo_flipping_attachment(){
     cylinder(r = screw_shaft_hole_radius, h = attachment_thickness);
     // Gear Hole
     translate([0, 0, attachment_thickness - screw_gear_hole_depth]){
-      scale([teeth_scaling_factor, teeth_scaling_factor, 1]) triangular_teeth(inner_diameter = teeth_diameter, tooth_length=tooth_length, number_of_teeth = number_of_teeth);
+      scale([teeth_scaling_factor, teeth_scaling_factor, 1]) triangular_teeth(inner_diameter = teeth_outer_diameter- tooth_length*2, tooth_length=tooth_length, number_of_teeth = number_of_teeth);
     }
   }
 }

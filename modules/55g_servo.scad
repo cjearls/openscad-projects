@@ -86,7 +86,7 @@ module 55g_servo(servo_body_dimensions = servo_body_dimensions,
       
 			// Gear
 			translate([gearbox_radii[0], gearbox_radii[0], 0]){
-				triangular_teeth(inner_diameter = teeth_outer_diameter, tooth_length = tooth_length, number_of_teeth = number_of_teeth, height = gearbox_heights[0]+gearbox_heights[1]+gearbox_heights[2]+gear_height+servo_body_dimensions[2]);
+				triangular_teeth(inner_diameter = teeth_outer_diameter - tooth_length*2, tooth_length = tooth_length, number_of_teeth = number_of_teeth, height = gearbox_heights[0]+gearbox_heights[1]+gearbox_heights[2]+gear_height+servo_body_dimensions[2]);
 			}
 
       // Tag Base
