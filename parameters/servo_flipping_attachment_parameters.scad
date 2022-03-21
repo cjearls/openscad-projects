@@ -15,7 +15,7 @@ fn_value = 20;
 rotated_extrusion_thickness = 3;
 // This scales the teeth to factor in imperfections in the printing resolution
 // Testing 1, 1.05, 1.1, and 1.15.
-teeth_scaling_factor = 1.15;
+teeth_scaling_factor = 1.10;
 
 attachment_arc_angle = (attachment_angle - attachment_open_angle)/2;
 hole_centers_offset_from_edge = attachment_width/2;
