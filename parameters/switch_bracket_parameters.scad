@@ -12,4 +12,6 @@ bracket_tolerance_offset = .75;
 bracket_height = verticalScrewDistance + 2*bracket_edge_distance;
 bracket_width = switchWidth + 2*bracket_edge_distance;
 
+bracket_overhang_extension = 2;
+
 switch_bracket_edge_to_servo_bracket = (total_servo_height - overhang_height) - servo_top_horizontal_offset_from_switch_edge - (bracket_width - switchWidth)/2;
