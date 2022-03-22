@@ -1,6 +1,6 @@
 include <../parameters/55g_servo_parameters.scad>
 
-screw_shaft_hole_radius = 2.45/2;
+screw_shaft_hole_radius = 3.175/2;
 screw_head_hole_radius = 5.3/2;
 screw_head_hole_depth = 0;
 gear_hole_depth_offset = .3;
