@@ -1,7 +1,20 @@
 include <../parameters/lightswitch_parameters.scad>
 include <../parameters/switch_bracket_parameters.scad>
 
-module switchBracket(numberOfSwitches=numberOfSwitches, plateToEdgeSwitch=plateToEdgeSwitch, switchToSwitch=switchToSwitch, switchHeight=switchHeight, switchWidth=switchWidth, verticalScrewDistance=verticalScrewDistance, plateHeight=plateHeight, plateDepth=plateDepth, screwDiameter=screwDiameter, bracket_thickness = bracket_thickness, bracket_edge_distance = bracket_edge_distance, servo_gear_vertical_offset_from_switch_center = servo_gear_vertical_offset_from_switch_center, servo_horizontal_offset_from_switch = servo_horizontal_offset_from_switch, servo_offset_from_switch_plate = servo_offset_from_switch_plate){
+module switchBracket(numberOfSwitches=numberOfSwitches,
+    plateToEdgeSwitch=plateToEdgeSwitch,
+    switchToSwitch=switchToSwitch,
+    switchHeight=switchHeight,
+    switchWidth=switchWidth,
+    verticalScrewDistance=verticalScrewDistance,
+    plateHeight=plateHeight,
+    plateDepth=plateDepth,
+    screwDiameter=screwDiameter,
+    bracket_thickness = bracket_thickness,
+    bracket_edge_distance = bracket_edge_distance,
+    servo_gear_vertical_offset_from_switch_center = servo_gear_vertical_offset_from_switch_center,
+    servo_top_horizontal_offset_from_switch_edge = servo_top_horizontal_offset_from_switch_edge,
+    servo_offset_from_switch_plate = servo_offset_from_switch_plate){
     $fn=20;
     // Light switch bracket
     rotate([90, 0, 0]){
