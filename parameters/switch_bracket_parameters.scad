@@ -4,7 +4,7 @@ include <../parameters/55g_servo_parameters.scad>
 bracket_thickness = 3;
 bracket_edge_distance = 5;
 servo_gear_vertical_offset_from_switch_center = 0;
-servo_top_horizontal_offset_from_switch_edge = (gear_height + switchWidth)/2;
+servo_top_horizontal_offset_from_switch_edge = (gear_height + switchWidth)/2 - 1;
 servo_offset_from_switch_plate = 27 + bracket_thickness;
 
 bracket_tolerance_offset = .75;
