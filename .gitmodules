@@ -1,3 +1,6 @@
 [submodule "nutsnbolts"]
 	path = nutsnbolts
 	url = https://github.com/JohK/nutsnbolts.git
+[submodule "openscad-rpi-library"]
+	path = openscad-rpi-library
+	url = https://github.com/RigacciOrg/openscad-rpi-library.git
