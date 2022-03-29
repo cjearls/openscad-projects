@@ -8,6 +8,7 @@ module raspberry_pi_power_sensing_case_bottom(){
         }
         cube([case_thickness, case_dimensions[1], case_dimensions[2]]);
         cube([case_dimensions[0], case_thickness, case_dimensions[2]]);
+        translate([case_dimensions[0] - case_thickness, 0, 0])cube([case_thickness, case_dimensions[1], case_dimensions[2]]);
     }
 }
 
