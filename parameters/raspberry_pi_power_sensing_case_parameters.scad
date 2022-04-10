@@ -15,3 +15,5 @@ thread_standard_name = "M2";
 screw_tolerance_scaling_factor = .9;
 screw_head_height = 1;
 screw_head_radius = 2;
+usb_cutout_dimensions = [53, 2, 18];
+usb_cutout_offset = [1.5, pcb_dimensions[1], .5];
