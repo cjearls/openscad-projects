@@ -25,6 +25,8 @@ module raspberry_pi_power_sensing_case_bottom(){
     // Raspberry Pi Cutouts
     translate(usb_cutout_offset + raspberry_pi_offset) cube(usb_cutout_dimensions);
     translate(power_cutout_offset + raspberry_pi_offset) cube(power_cutout_dimensions);
+    translate(hdmi_cutout_offset + raspberry_pi_offset) cube(hdmi_cutout_dimensions);
+    translate(audio_cutout_offset + raspberry_pi_offset) cube(audio_cutout_dimensions);
   }
 }
 
