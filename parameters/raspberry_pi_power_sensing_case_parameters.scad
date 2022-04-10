@@ -17,3 +17,5 @@ screw_head_height = 1;
 screw_head_radius = 2;
 usb_cutout_dimensions = [53, 2, 18];
 usb_cutout_offset = [1.5, pcb_dimensions[1], .5];
+power_cutout_dimensions = [5, 12, 5];
+power_cutout_offset = [pcb_dimensions[0], 4.5, 0];
