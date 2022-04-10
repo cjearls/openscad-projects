@@ -1,7 +1,7 @@
 include <../parameters/desk_clamp_parameters.scad>
 include <../nutsnbolts/cyl_head_bolt.scad>
 
-module desk_clamp_screw(){
+module desk_clamp_screw(screw_head_height = screw_head_height, screw_head_radius = screw_head_radius, screw_standard_name = screw_standard_name, screw_shaft_length = screw_shaft_length){
     union(){
       translate([0, 0, -screw_head_height/2]) hexaprism(ri=screw_head_radius, h=screw_head_height);
       scale([screw_tolerance_scaling_factor, screw_tolerance_scaling_factor, 1]){
